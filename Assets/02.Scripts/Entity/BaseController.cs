@@ -14,9 +14,12 @@ public class BaseController : MonoBehaviour
     protected Vector2 lookDirection = Vector2.zero;
     public Vector2 LookDirectoin { get { return lookDirection; } }
 
+    protected AnimaitionHandler animaitionHandler;
+
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        animaitionHandler = GetComponent<AnimaitionHandler>();
     }
 
     protected virtual void Start()
@@ -38,7 +41,7 @@ public class BaseController : MonoBehaviour
     {
         direction = direction * 5;
         _rigidbody.velocity = direction;
-        // animaitionHandler.Move(direction);
+        animaitionHandler.Move(direction);
     }
 
     private void Rotate(Vector2 direction)

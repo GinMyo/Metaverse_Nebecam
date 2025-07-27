@@ -14,17 +14,17 @@ public class PlayerController : BaseController
         camera = Camera.main;
     }
 
+    // 움직이는 기능
     void OnMove(InputValue inputValue)
     {
         movementDirection = inputValue.Get<Vector2>();
         movementDirection = movementDirection.normalized;
     }
     
+    // 마우스 방향으로 회전 기능
     void OnLook(InputValue inputValue)
     {
-        // 마우스의 좌표는 해상도의 좌표
         Vector2 mousePosition = inputValue.Get<Vector2>();
-        // 해상도의 좌표를 world 좌표로 바꿔주는 작업
         Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition);
         lookDirection = (worldPos - (Vector2)transform.position);
 
