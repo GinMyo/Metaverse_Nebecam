@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -33,17 +34,15 @@ public class Player : MonoBehaviour
 
     }
 
-    void Update()
+    void OnFlap(InputValue inputValue)
     {
         if (isDead)
         {
             if (deathCooldown <= 0)
             {
                 // 게임 재시작
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-                {
                     gameManager.RestartGame();
-                }
+
             }
             else
             {
@@ -53,10 +52,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-            {
                 isFlap = true;
-            }
         }
     }
 

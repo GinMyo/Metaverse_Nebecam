@@ -34,7 +34,7 @@
                 },
                 {
                     "name": "Flap",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "b9996018-7623-42d8-9cac-6db11d545a98",
                     "expectedControlType": "Button",
                     "processors": "",
