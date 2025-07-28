@@ -16,11 +16,11 @@ public class Player : MonoBehaviour
 
     public bool godMode = false;
 
-    //GameManager gameManager;
+    GameManager gameManager;
 
     void Start()
     {
-        //gameManager = GameManager.Instance;
+        gameManager = GameManager.Instance;
 
         animator = GetComponentInChildren<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -40,10 +40,10 @@ public class Player : MonoBehaviour
             if (deathCooldown <= 0)
             {
                 // 게임 재시작
-                //if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-                // {
-                //     gameManager.RestartGame();
-                // }
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+                {
+                    gameManager.RestartGame();
+                }
             }
             else
             {
@@ -76,7 +76,6 @@ public class Player : MonoBehaviour
         _rigidbody.velocity = velocity;
     }
 
-    // 충돌 시작시 호출
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (godMode) return;
@@ -86,7 +85,8 @@ public class Player : MonoBehaviour
         isDead = true;
         deathCooldown = 1f;
 
+        // 게임 오버
         animator.SetInteger("IsDie", 1);
-        //gameManager.GameOver();
+        gameManager.GameOver();
     }
 }
