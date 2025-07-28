@@ -9,7 +9,7 @@ public class BgLooper : MonoBehaviour
     public int obstacleCount = 0;
     public Vector3 obstacleLastPosition = Vector3.zero;
 
-    void Start()        //¸ğµç Àå¾Ö¹°µéÀ» Ã£¾Æ¿Í¼­ ·£´ı ¹èÄ¡ 
+    void Start()        //ëª¨ë“  ì¥ì• ë¬¼ë“¤ì„ ì°¾ì•„ì™€ì„œ ëœë¤ ë°°ì¹˜ 
     {
         Obstacle[] obstacles = GameObject.FindObjectsOfType<Obstacle>();
         obstacleLastPosition = obstacles[0].transform.position;
@@ -21,7 +21,7 @@ public class BgLooper : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)     // Trigger Ãæµ¹ÇÏ´Â °ÍµéÀ» ·£´ı ¹èÄ¡
+    private void OnTriggerEnter2D(Collider2D collision)     // Trigger ì¶©ëŒí•˜ëŠ” ê²ƒë“¤ì„ ëœë¤ ë°°ì¹˜
     {
         if(collision.CompareTag("BackGround"))
         {

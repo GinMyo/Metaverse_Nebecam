@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    public Transform target;
+    public Transform player;
     float offsetX;
 
     void Start()
     {
-        if (target == null)
+        if (player == null)
             return;
 
-        offsetX = transform.position.x - target.position.x;
+        offsetX = transform.position.x - player.position.x;
     }
 
-    void Update()
+    private void LateUpdate()
     {
-        if (target == null)
+        if (player == null)
             return;
-
-        Vector3 pos = transform.position;
-        pos.x = target.position.x + offsetX;
-        transform.position = pos;
-    }
+        Vector3 targetPos = new Vector3(player.position.x + offsetX, 0, this.transform.position.z);
+        transform.position = targetPos;
+    }    
 }

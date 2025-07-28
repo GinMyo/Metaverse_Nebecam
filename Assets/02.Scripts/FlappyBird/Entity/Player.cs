@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         {
             if (deathCooldown <= 0)
             {
-                // °ÔÀÓ Àç½ÃÀÛ
+                // ê²Œìž„ ìž¬ì‹œìž‘
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
                 {
                     gameManager.RestartGame();
@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
         isDead = true;
         deathCooldown = 1f;
 
-        // °ÔÀÓ ¿À¹ö
+        // ê²Œìž„ ì˜¤ë²„ 
         animator.SetInteger("IsDie", 1);
         gameManager.GameOver();
     }

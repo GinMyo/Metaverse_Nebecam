@@ -22,7 +22,7 @@ public class Obstacle : MonoBehaviour
         gameManager = GameManager.Instance;    
     }
 
-    public Vector3 SetRandomPlace(Vector3 lastPosition, int obstaclCount)
+    public Vector3 SetRandomPlace(Vector3 lastPosition, int obstacleCount)
     {
         float holeSize = Random.Range(holeSizeMin, holeSizeMax);
         float halfHoleSize = holeSize / 2f;
