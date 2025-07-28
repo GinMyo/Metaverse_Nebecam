@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 716144823}
   - component: {fileID: 716144827}
   - component: {fileID: 716144828}
+  - component: {fileID: 716144829}
   - component: {fileID: 716144826}
   m_Layer: 0
   m_Name: Player
@@ -450,7 +451,47 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 716144827}
+        m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+        m_MethodName: SendMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 877dc1f4-5ea1-4b57-9d23-4d54e85a842c
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e440a8ee-f85f-439e-ab8e-3b8271e78563
+    m_ActionName: Player/Look[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 948963431}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2c9ec1ed-8e70-472a-95fd-d7c7939f3ed5
+    m_ActionName: Player/Interaction[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b9996018-7623-42d8-9cac-6db11d545a98
+    m_ActionName: Player/Flap[/Keyboard/space,/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -481,6 +522,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b5fb38852abd244848ad18d55ba2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &716144829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716144822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b315756197e2d9943bd0b5b2b7b68a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGameSceneName: FlappyBird
+  interactionPopup: {fileID: 8011222320589432673}
 --- !u!1 &834859290
 GameObject:
   m_ObjectHideFlags: 0
@@ -8996,7 +9051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1250, y: 185}
+  m_AnchoredPosition: {x: 1240, y: 185}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1709582282

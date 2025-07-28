@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MiniGameInput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string miniGameSceneName = "FlappyBird";
+    public GameObject interactionPopup;
+
+    public void OnInteraction(InputValue inputValue)
     {
-        
+        if (interactionPopup.activeSelf)
+        {
+            EnterMiniGame();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void EnterMiniGame()
     {
-        
+        UnityEngine.SceneManagement.SceneManager.LoadScene(miniGameSceneName);
     }
 }
+
